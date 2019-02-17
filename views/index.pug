@@ -1,0 +1,23 @@
+extends layout
+
+block content
+    .chat-interface
+        .header
+            .left
+                #socket_id left
+            .right right
+
+        .body
+            .left left
+            .right
+                .messages
+                    ul#messages
+                .controls
+                    .emojis
+                        button.btn.btn-default.btn-show-emojis
+                            i.far.fa-smile
+                    .message
+                        input#message.message(type="text")
+                    .actions
+                        button.btn.btn-default.btn-send-message
+                            i.fas.fa-paper-plane

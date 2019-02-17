@@ -1,0 +1,122 @@
+
+html
+body
+    height 100%
+
+body
+    background: linear-gradient(to bottom, #e05c0e 0%,#e05c0e 20%,#dddddd 20%,#dddddd 100%);
+    font-family: 'Open Sans', sans-serif
+    padding 32px
+
+    .chat-interface
+        background-color #FFFFFF
+        box-shadow 0px 0px 5px 1px rgba(0, 0, 0, 0.6)
+        border-radius 5px
+        height 100%
+        overflow hidden
+        padding 0
+
+        .header
+            background-color: #dddddd
+            height 56px
+
+            .left
+            .right
+                display: inline-block
+                height 100%
+
+            .left
+                border-right 1px solid #bbbbbb
+                width 350px
+
+            .right
+                border-left 1px solid white
+                border-bottom 1px solid #bbbbbb
+                width calc(100% - 350px)
+
+        .body
+            height calc(100% - 56px)
+
+            .left
+            .right
+                display: inline-block
+                height 100%
+                vertical-align: top
+
+            .left
+                border-right 1px solid #999999
+                width 350px
+
+            .right
+                width calc(100% - 350px)
+
+                .messages
+                    background-color: #efefef
+                    height calc(100% - 72px)
+                    padding: 20px
+
+                    ul
+                        list-style: none
+                        margin 0
+                        padding 0
+
+                .controls
+                    background-color: #d4d3d3
+                    height calc(100% - calc(100% - 72px))
+                    padding 8px
+
+                    .emojis
+                    .message
+                    .actions
+                        display inline-block
+                        height 100%
+                        vertical-align: top
+                    
+                    .emojis
+                        background-color: #ffffff
+                        border-radius 28px 0 0 28px
+                        width 56px
+
+                        .btn-show-emojis
+                            height 100%
+                            font-size 28px
+                            width 100%
+
+                            &:focus
+                            &:active
+                                outline: 0
+                                box-shadow none
+
+                    .message
+                        background-color: #ffffff
+                        border-radius 0 28px 28px 0
+                        padding-bottom 8px
+                        padding-top 8px
+                        padding-right 28px
+                        width calc(100% - 120px)
+
+                        input[type="text"]
+                            border 0 none
+                            height 100%
+                            outline: none
+                            width 100%
+
+                    .actions
+                        margin-left: 8px
+                        width 56px
+
+                        .btn-send-message
+                            background-color: #e05c0e
+                            border-radius 50%
+                            color #ffffff
+                            height 100%
+                            font-size 22px
+                            width 100%
+
+                            &:focus
+                            &:active
+                                outline: 0
+                                box-shadow none
+                         
+
+@import 'media-queries.styl'

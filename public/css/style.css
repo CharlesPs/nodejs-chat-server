@@ -2,91 +2,181 @@ html,
 body {
   height: 100%;
 }
+.hide {
+  display: none !important;
+}
+.show-on-mobile {
+  display: none;
+}
 body {
   background: linear-gradient(to bottom, #e05c0e 0%, #e05c0e 20%, #ddd 20%, #ddd 100%);
+  background-repeat: no-repeat;
   font-family: 'Open Sans', sans-serif;
-  padding: 32px;
+  font-size: 16px;
+  padding: 24px;
 }
-body .chat-interface {
+.chat-interface {
   background-color: #fff;
   box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.6);
   border-radius: 5px;
   height: 100%;
+  margin: 0 auto;
   overflow: hidden;
   padding: 0;
+  position: relative;
+  width: 1024px;
+  z-index: 1;
 }
-body .chat-interface .header {
+.chat-interface .header {
   background-color: #ddd;
-  height: 56px;
+  height: calc(48px + 16px);
+  overflow: hidden;
 }
-body .chat-interface .header .left,
-body .chat-interface .header .right {
+.chat-interface .header .left,
+.chat-interface .header .right {
   display: inline-block;
   height: 100%;
+  padding: 8px 16px;
+  vertical-align: top;
 }
-body .chat-interface .header .left {
+.chat-interface .header .left .btn-toggle-my-profile,
+.chat-interface .header .right .btn-toggle-my-profile {
+  font-size: 22px;
+  height: 48px;
+  min-width: 48px;
+}
+.chat-interface .header .left {
   border-right: 1px solid #bbb;
   width: 350px;
 }
-body .chat-interface .header .right {
+.chat-interface .header .left .account {
+  cursor: pointer;
+}
+.chat-interface .header .left .account .avatar {
+  border-radius: 50%;
+  display: inline-block;
+  height: 48px;
+  margin-right: 8px;
+  overflow: hidden;
+  vertical-align: top;
+  width: 48px;
+}
+.chat-interface .header .left .account .avatar img {
+  width: 100%;
+}
+.chat-interface .header .left .account .name {
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 600;
+  padding-top: 8px;
+  vertical-align: top;
+}
+.chat-interface .header .right {
   border-left: 1px solid #fff;
   border-bottom: 1px solid #bbb;
   width: calc(100% - 350px);
 }
-body .chat-interface .body {
+.chat-interface .body {
   height: calc(100% - 56px);
 }
-body .chat-interface .body .left,
-body .chat-interface .body .right {
+.chat-interface .body .left,
+.chat-interface .body .right {
   display: inline-block;
   height: 100%;
   vertical-align: top;
 }
-body .chat-interface .body .left {
+.chat-interface .body .left {
   border-right: 1px solid #999;
   width: 350px;
 }
-body .chat-interface .body .right {
+.chat-interface .body .left .users {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.chat-interface .body .left .users li.user {
+  border-bottom: 1px solid #999;
+}
+.chat-interface .body .left .users li.user.active {
+  background-color: #999;
+}
+.chat-interface .body .left .users li.user .avatar {
+  border-radius: 50%;
+  display: inline-block;
+  height: 48px;
+  margin-right: 8px;
+  overflow: hidden;
+  vertical-align: top;
+  width: 48px;
+}
+.chat-interface .body .left .users li.user .avatar img {
+  width: 100%;
+}
+.chat-interface .body .left .users li.user .name {
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 600;
+  padding-top: 8px;
+  vertical-align: top;
+}
+.chat-interface .body .right {
   width: calc(100% - 350px);
 }
-body .chat-interface .body .right .messages {
-  background-color: #efefef;
-  height: calc(100% - 72px);
+.chat-interface .body .right .messages {
+  background-color: #f3eee8;
+  height: calc(100% - (72px + 8px));
+  overflow: auto;
   padding: 20px;
 }
-body .chat-interface .body .right .messages ul {
+.chat-interface .body .right .messages ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-body .chat-interface .body .right .controls {
+.chat-interface .body .right .messages ul .msg-row {
+  padding-bottom: 4px;
+}
+.chat-interface .body .right .messages ul .msg-row .msg-bubble {
+  background-color: #fff;
+  border-radius: 7.5px;
+  box-shadow: 0 1px 0.5px rgba(0,0,0,0.13);
+  display: inline-block;
+  padding: 4px 8px;
+}
+.chat-interface .body .right .messages ul .msg-right {
+  text-align: right;
+}
+.chat-interface .body .right .messages ul .msg-right .msg-bubble {
+  background-color: #dcf8c6;
+}
+.chat-interface .body .right .controls {
   background-color: #d4d3d3;
-  height: calc(100% - calc(100% - 72px));
+  height: calc(100% - (100% - 72px));
   padding: 8px;
 }
-body .chat-interface .body .right .controls .emojis,
-body .chat-interface .body .right .controls .message,
-body .chat-interface .body .right .controls .actions {
+.chat-interface .body .right .controls .emojis,
+.chat-interface .body .right .controls .message,
+.chat-interface .body .right .controls .actions {
   display: inline-block;
   height: 100%;
   vertical-align: top;
 }
-body .chat-interface .body .right .controls .emojis {
+.chat-interface .body .right .controls .emojis {
   background-color: #fff;
   border-radius: 28px 0 0 28px;
   width: 56px;
 }
-body .chat-interface .body .right .controls .emojis .btn-show-emojis {
+.chat-interface .body .right .controls .emojis .btn-show-emojis {
   height: 100%;
   font-size: 28px;
   width: 100%;
 }
-body .chat-interface .body .right .controls .emojis .btn-show-emojis:focus,
-body .chat-interface .body .right .controls .emojis .btn-show-emojis:active {
+.chat-interface .body .right .controls .emojis .btn-show-emojis:focus,
+.chat-interface .body .right .controls .emojis .btn-show-emojis:active {
   outline: 0;
   box-shadow: none;
 }
-body .chat-interface .body .right .controls .message {
+.chat-interface .body .right .controls .message {
   background-color: #fff;
   border-radius: 0 28px 28px 0;
   padding-bottom: 8px;
@@ -94,17 +184,17 @@ body .chat-interface .body .right .controls .message {
   padding-right: 28px;
   width: calc(100% - 120px);
 }
-body .chat-interface .body .right .controls .message input[type="text"] {
+.chat-interface .body .right .controls .message input[type="text"] {
   border: 0 none;
   height: 100%;
   outline: none;
   width: 100%;
 }
-body .chat-interface .body .right .controls .actions {
+.chat-interface .body .right .controls .actions {
   margin-left: 8px;
   width: 56px;
 }
-body .chat-interface .body .right .controls .actions .btn-send-message {
+.chat-interface .body .right .controls .actions .btn-send-message {
   background-color: #e05c0e;
   border-radius: 50%;
   color: #fff;
@@ -112,22 +202,99 @@ body .chat-interface .body .right .controls .actions .btn-send-message {
   font-size: 22px;
   width: 100%;
 }
-body .chat-interface .body .right .controls .actions .btn-send-message:focus,
-body .chat-interface .body .right .controls .actions .btn-send-message:active {
+.chat-interface .body .right .controls .actions .btn-send-message:focus,
+.chat-interface .body .right .controls .actions .btn-send-message:active {
   outline: 0;
   box-shadow: none;
 }
-@media screen and (max-width: 500px) {
+.chat-interface .my-profile {
+  background-color: #fff;
+  box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.3);
+  bottom: 0;
+  left: -354px;
+  position: absolute;
+  top: 0;
+  transition: all 0.2s ease;
+  width: 350px;
+  z-index: 2;
+}
+.chat-interface .my-profile.active {
+  left: 0;
+}
+.chat-interface .my-profile .header {
+  background-color: #e05c0e;
+  color: #fff;
+  height: 64px;
+  padding: 8px 16px;
+}
+.chat-interface .my-profile .header button {
+  color: #fff;
+  font-size: 22px;
+  height: 48px;
+  width: 48px;
+}
+.chat-interface .my-profile .header button:active,
+.chat-interface .my-profile .header button:focus {
+  box-shadow: none;
+  outline: none;
+}
+.chat-interface .my-profile .body {
+  padding: 8px 16px;
+}
+.chat-interface .my-profile .body .field {
+  margin-bottom: 16px;
+}
+.chat-interface .my-profile .body label.title {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+.chat-interface .my-profile .body span {
+  border-bottom: 1px solid #333;
+  display: block;
+  height: 25px;
+  margin-left: 16px;
+  width: calc(100% - 16px);
+  padding: 0 4px;
+}
+.chat-interface .my-profile .body span.editable {
+  cursor: pointer;
+}
+.chat-interface .my-profile .body input[type="text"] {
+  border: 0;
+  border-bottom: 1px solid #333;
+  display: block;
+  height: 25px;
+  margin-left: 16px;
+  width: calc(100% - 16px);
+  padding: 0 4px;
+}
+@media screen and (max-width: 1024px) {
   body {
     padding: 0;
   }
   body .chat-interface {
     border-radius: 0;
+    width: 100%;
   }
-  body .left {
+}
+@media screen and (max-width: 425px) {
+  .chat-interface {
+    width: 100%;
+  }
+  .chat-interface .header .right {
+    padding-left: 0;
+  }
+  .chat-interface .my-profile .header {
+    padding-left: 0;
+  }
+  .left {
     display: none !important;
   }
-  body .right {
+  .right {
     width: 100% !important;
+  }
+  .show-on-mobile {
+    display: initial;
   }
 }

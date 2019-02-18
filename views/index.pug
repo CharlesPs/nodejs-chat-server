@@ -4,11 +4,20 @@ block content
     .chat-interface
         .header
             .left
-                #socket_id left
-            .right right
+                .account.btn-toggle-my-profile
+                    .avatar
+                        img(src="uploads/avatars/no_avatar.jpg")
+                    .name 
+            .right
+                button.btn.btn-default.show-on-mobile.btn-toggle-my-profile
+                    i.fas.fa-bars
+                button.btn.btn-default.show-on-mobile.btn-toggle-users
+                    i.fas.fa-users
+                span.chat-title
 
         .body
-            .left left
+            .left 
+                ul.users
             .right
                 .messages
                     ul#messages
@@ -21,3 +30,16 @@ block content
                     .actions
                         button.btn.btn-default.btn-send-message
                             i.fas.fa-paper-plane
+
+        .my-profile
+            .header 
+                button.btn.btn-default.btn-toggle-my-profile
+                    i.fas.fa-arrow-left
+            .body
+                .field
+                    label.title Chat Id:
+                    span.socket_id
+                .field
+                    label.title Nick:
+                    span.editable.nick_name
+                    input#nick_name.hide(type="text")

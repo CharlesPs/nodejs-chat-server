@@ -8,6 +8,8 @@ var stylus = require('stylus');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
+require('./helpers/db_helper').connect()
+
 var app = express();
 
 // view engine setup
